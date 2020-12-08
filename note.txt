@@ -1,0 +1,29 @@
+g++ process_tags_from_disc.cpp -I /usr/include/timetagger -l TimeTagger 
+g++ readRawSwabian.cpp -I /usr/include/timetagger -l TimeTagger  -o rrswabian
+
+./rrswabian ./swabian/20200714_Swabian_Timestamp/data_2 4_1uW0dB.1.ttbin 14july0db 
+
+./crt ./14july0db alice 500 1500 1500 0
+
+./crt ./14july0db bob 2500 2500 0 3000
+
+./cm ./14july0db 1500 -6500
+
+./run.sh ./swabian/20200714_Swabian_Timestamp/data_2 4_1uW0dB.1.ttbin 14july0db result.csv 
+
+./run.sh [datafolder] [datafilename] [workfolder] [result.csv]
+
+./run.sh ./swabian/20200714_Swabian_Timestamp/data_1 3.8mW00dB_1.1.ttbin 14july_data_1 result_data_1.csv
+
+os.system("./run.sh "+input_directory+" "+file+" "+work_directory+" "+log_file_name+" "+"runbatch")
+
+
+./crt 23Oct2020_stitch alice 0 -1000 -1250 -250
+
+./crt $3 bob 0 0 250 250
+
+./cm 23Oct2020_stitch 1500 -7500
+
+./grb 23Oct2020_stitch alice 
+
+
